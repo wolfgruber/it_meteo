@@ -1,6 +1,9 @@
-class rechteck:
+from class_formen import formen
+
+class rechteck(formen):
     '''Klasse "Rechteck" beschreibt ein geom. Rechteck mit den Parametern
-    Länge und Breite. Funktionen: Fläche und Umfang'''
+    Länge und Breite. Funktionen: Fläche und Umfang. Erbt Funktionen von der
+    Klasse formen'''
 
     def __init__(self, L, B):
         self.Laenge = L

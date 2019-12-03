@@ -1,6 +1,9 @@
-class kreis:
+from class_formen import formen
+
+class kreis(formen):
     '''Klasse "Kreis" beschreibt einen geom. Kreis mit einem Radius, der bei
-    Initialisierug übergeben wird. Funktionen sind: Umfang und Fläche'''
+    Initialisierug übergeben wird. Funktionen sind: Umfang und Fläche. Erbt
+    die Funktionen von der Basisklasse formen'''
 
     pi = 3.141592653589793
 
