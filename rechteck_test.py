@@ -1,6 +1,7 @@
 from rechteck import rechteck
 
 def test_rechteck():
+    """Funktion zum Testen der rechteck-Klasse"""
     a = 1
     b = 1
     r = rechteck(a, b)
