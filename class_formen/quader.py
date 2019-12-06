@@ -7,9 +7,9 @@ class quader(rechteck):
     umfang() von seiner Basisklasse rechteck"""
 
     def __init__(self, L, B, H):
-        self.Laenge = L
-        self.Breite = B
-        self.Hoehe = H
+        self.Laenge = self.check_input(L)
+        self.Breite = self.check_input(B)
+        self.Hoehe = self.check_input(H)
 
     def volumen(self):
         """Gibt das Volumen des Quaders zurück. Basiert auf der
