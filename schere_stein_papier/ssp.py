@@ -33,6 +33,7 @@ def evaluate(player1, player2):
 
     return result
 
+
 # Hier beginnt das Hauptprogramm:
 # Die Optionen, aus denen das Programm wählen kann
 options = ["Schere", "Stein", "Papier"]

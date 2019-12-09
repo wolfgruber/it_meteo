@@ -1,5 +1,6 @@
-from kreis import kreis
 from numpy import pi
+from kreis import kreis
+
 
 def test_kreis():
     """Funktion zum Testen der Kreis-Klasse"""

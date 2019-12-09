@@ -1,5 +1,6 @@
 from quader import quader
 
+
 def test_quader():
     """Funktion zum Testen der quader-Klasse"""
     l = 1

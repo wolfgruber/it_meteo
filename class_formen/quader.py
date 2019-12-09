@@ -1,5 +1,6 @@
-from class_formen import formen
+#from class_formen import formen
 from rechteck import rechteck
+
 
 class quader(rechteck):
     """Quader-Klasse repräsentiert einen Quader und ist aus einem Rechteck mit
