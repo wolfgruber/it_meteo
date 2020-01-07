@@ -37,7 +37,7 @@ def plotmap(loc, name):
 
     plt.text(loc[0]+0.25, loc[1]+0.25, name,size=10)
 
-    plt.savefig('docs/build/html/loc.jpg')
+    plt.savefig('docs/source/_static/loc.jpg')
     plt.close()
     
     return
@@ -75,7 +75,7 @@ class Plot:
         plt.ylabel('Pressure/hPa')
         plt.xlabel('T/°C')
         plt.legend()
-        plt.savefig('docs/build/html/plt.jpg')
+        plt.savefig('docs/source/_static/plt.jpg')
         plt.show()
 
         plotmap(self.loc[0:2], self.loc[2])

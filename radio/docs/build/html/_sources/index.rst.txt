@@ -17,7 +17,7 @@ This code reads data from http://weather.uwyo.edu/upperair/sounding.html and plo
 
 The last plot produced by the program was a sonde launched by this weather station:
 
-.. figure::  ../build/html/loc.jpg
+.. figure::  _static/loc.jpg
    :align:   center
 
    weather station
