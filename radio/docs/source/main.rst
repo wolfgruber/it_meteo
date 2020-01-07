@@ -1,0 +1,6 @@
+
+====
+main
+====
+
+.. autofunction:: main.main
