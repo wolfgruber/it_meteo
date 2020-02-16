@@ -14,7 +14,7 @@ class Data:
     object.'''
     
     def __init__(self, filename):
-        grb = ecc.GribFile(filename)
+        '''grb = ecc.GribFile(filename)
         msg = ecc.GribMessage(grb)
         self.name = msg.get('name')
         self.lat = msg.get('distinctLatitudes')
@@ -22,7 +22,11 @@ class Data:
         #self.lat = msg.get('latitudes')
         #self.lon = msg.get('longitudes')
         self.values = np.reshape(msg.get('values'), (len(self.lat), len(self.lon)))
-        return
+        return'''
+        with ecc.GribFile(filename) as grib:
+            for i in range(len(grib)):
+                msg = ecc.GribMessage(grib)
+                print(msg.get('name'))
         
     def get_values(self):
         return self.values
@@ -33,8 +37,12 @@ class Data:
         
         
 class Plot:
+    '''The class Plot takes a Data object and plots the data with cartopy.'''
     
-    def __init__(self, dataobject):
+    
+    def __init__(self, dataobject, name):
+        self.name = name
+        self.title = dataobject.name
         self.values = dataobject.get_values()
         self.lat, self.lon = dataobject.get_coord()
         #print('len(lat)', len(self.lat))
@@ -55,5 +63,5 @@ class Plot:
     
 if __name__ == '__main__':
     da = Data('data/data.grib')
-    pl = Plot(da)
-    pl.plot()
+    #pl = Plot(da, 'first plot')
+    #pl.plot()
