@@ -19,15 +19,7 @@ class Data:
         self.mean_space = 0
         self.lat = []
         self.lon = []
-        '''grb = ecc.GribFile(filename)
-        msg = ecc.GribMessage(grb)
-        self.name = msg.get('name')
-        self.lat = msg.get('distinctLatitudes')
-        self.lon = msg.get('distinctLongitudes')
-        #self.lat = msg.get('latitudes')
-        #self.lon = msg.get('longitudes')
-        self.values = np.reshape(msg.get('values'), (len(self.lat), len(self.lon)))
-        return'''
+
         with ecc.GribFile(filename) as grib:
             n = len(grib)//2
             for j in range(len(grib)):
@@ -78,23 +70,69 @@ class Data:
     def get_date(self, idx):
         return self.values[idx,:,:]
 
+
+    def get_name(self):
+        return self.name
+
     
-def plot_global(dataobject):
-    lat, lon = dataobject.get_coord()
-    values = dataobject.get_time_mean()
+def plot_mean_global(data1, data2):
+    lat1, lon1 = data1.get_coord()
+    values1 = data1.get_time_mean()
+    name1 = data1.get_name()
+    
+    values2 = data2.get_time_mean()
+    name2 = data2.get_name()
+    if values1.shape == values2.shape:
+        lat2 = lat1
+        lon2 = lon1
+    else:
+        lat2, lon2 = data2.get_coord()
     
     fig = plt.figure()
-    ax = fig.add_subplot(1,1,1, projection=ctp.crs.Mollweide())
+    ax1 = fig.add_subplot(1,1,1, projection=ctp.crs.Mollweide())
         
-    ax.contourf(lon, lat, values, transform=ctp.crs.PlateCarree(),
+    m1 = ax1.contourf(lon1, lat1, values1, 15, transform=ctp.crs.PlateCarree(),
                 cmap='nipy_spectral')
+    
+    m2 = ax1.contourf(lon2, lat2, values2, colors='none',
+                 hatches=['/', 'x','//', 'xx', '///', 'xxx', '////', 'xxxx'],
+                 transform=ctp.crs.PlateCarree())
         
-    ax.coastlines()
-    ax.set_global()
+    fig.colorbar(m1, orientation='horizontal')
+    fig.colorbar(m2, orientation='horizontal')
+    ax1.coastlines()
+    ax1.set_global()
+    plt.savefig('fig/mean_global.png')
+    plt.show()
+    return
+
+def plot_time_series(dataobject1, dataobject2):
+    values1, std1 = dataobject1.get_space_mean()
+    name1 = dataobject1.get_name()
+    values2, std2 = dataobject2.get_space_mean()
+    name2 = dataobject2.get_name()
+    time1 = range(len(values1))
+    time2 = range(len(values2))
+    
+    fig, ax1 = plt.subplots()
+    
+    color = 'tab:blue'
+    ax1.errorbar(time1, values1, yerr=std1, color=color)
+    ax1.set_ylabel(name1, color=color)
+    ax1.set_xlabel('months since Jan 1979')
+    ax1.tick_params(axis='y', labelcolor=color)
+    
+    color = 'tab:orange'
+    ax2 = ax1.twinx()
+    ax2.errorbar(time2, values2, yerr=std2, color=color, alpha=0.8)
+    ax2.set_ylabel(name2, color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
+    
     plt.show()
     return
     
 if __name__ == '__main__':
-    #da = Data('data/data.grib', 'tp')
-    da = Data('data/data.grib', '2t')
-    plot_global(da)
+    perc = Data('data/data.grib', 'tp')
+    temp = Data('data/data.grib', '2t')
+    plot_mean_global(perc, temp)
+    #plot_time_series(perc, temp)
