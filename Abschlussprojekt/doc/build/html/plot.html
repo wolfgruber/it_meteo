@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plot &#8212; Abschlussproject  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-plot">
+<span id="plot"></span><h1>plot<a class="headerlink" href="#module-plot" title="Permalink to this headline">¶</a></h1>
+<p>This file contains functions to plot the data loaded and analysed with the
+Data class.</p>
+<dl class="function">
+<dt id="plot.plot_anomaly">
+<code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_anomaly</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em>, <em class="sig-param">anno</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_anomaly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a plot with the deviation of the data from a given year from the
+temporal mean. The plot is saved at “fig/anomaly_[year].plt”.</p>
+<dl class="simple">
+<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the colored plot</p>
+</dd>
+<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the hatched plot</p>
+</dd>
+<dt>anno<span class="classifier">int</span></dt><dd><p>year of interest</p>
+</dd>
+</dl>
+<p>None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="plot.plot_austria">
+<code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_austria</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em>, <em class="sig-param">anno</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_austria" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a plot with the temporally averaged datasetd for a given year of
+two Data objects in Europe within the boundaries of map_border. The plot
+is saved at “fig/austria_[year].png”</p>
+<dl class="simple">
+<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the colored plot</p>
+</dd>
+<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the hatched plot</p>
+</dd>
+<dt>anno<span class="classifier">int</span></dt><dd><p>year of interest</p>
+</dd>
+</dl>
+<p>None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="plot.plot_mean_global">
+<code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_mean_global</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_mean_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a plot with thwe mean with respect to time of two datasets. The
+plot is saved in “fig/mean_lobal.png”.</p>
+<dl class="simple">
+<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the colorplot</p>
+</dd>
+<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the hatched plot</p>
+</dd>
+</dl>
+<p>None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="plot.plot_time_series">
+<code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_time_series</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_time_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a plot with the spatial means of two datasets. The plot is saved
+in “fig/time_series.png”</p>
+<dl class="simple">
+<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the first plot (blue)</p>
+</dd>
+<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the second plot (orange)</p>
+</dd>
+</dl>
+<p>None.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Abschlussproject</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Ludwig Wolfgruber.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/plot.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

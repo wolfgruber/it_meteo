@@ -1,15 +1,31 @@
-'''This file contains functions to plot the data loaded and analysed with the
-Data class.'''
+'''This module contains functions to plot the data loaded and analysed with
+the Data class.'''
 
-import numpy as np
+#import numpy as np
 import matplotlib.pyplot as plt
-import eccodes as ecc
+#import eccodes as ecc
 import cartopy as ctp
 
 from classes import Data
 
 
 def plot_mean_global(data1, data2):
+    '''
+    Creates a plot with thwe mean with respect to time of two datasets. The
+    plot is saved in "fig/mean_lobal.png".
+
+    Parameters
+    ----------
+    data1 : Data object
+        data for the colorplot
+    data2 : Data object
+        data for the hatched plot
+
+    Returns
+    -------
+    None.
+
+    '''
     lat1, lon1 = data1.get_coord()
     values1 = data1.get_time_mean()
     name1 = data1.get_name()
@@ -43,11 +59,27 @@ def plot_mean_global(data1, data2):
     return
 
 
-def plot_time_series(dataobject1, dataobject2):
-    values1, std1 = dataobject1.get_space_mean()
-    name1 = dataobject1.get_name()
-    values2, std2 = dataobject2.get_space_mean()
-    name2 = dataobject2.get_name()
+def plot_time_series(data1, data2):
+    '''
+    Creates a plot with the spatial means of two datasets. The plot is saved
+    in "fig/time_series.png"
+
+    Parameters
+    ----------
+    data1 : Data object
+        data for the first plot (blue)
+    data2 : Data object
+        data for the second plot (orange)
+
+    Returns
+    -------
+    None.
+
+    '''
+    values1, std1 = data1.get_space_mean()
+    name1 = data1.get_name()
+    values2, std2 = data2.get_space_mean()
+    name2 = data2.get_name()
     time1 = range(len(values1))
     time2 = range(len(values2))
     
@@ -71,6 +103,25 @@ def plot_time_series(dataobject1, dataobject2):
 
 
 def plot_austria(data1, data2, anno):
+    '''
+    Creates a plot with the temporally averaged datasetd for a given year of
+    two Data objects in Europe within the boundaries of map_border. The plot
+    is saved at "fig/austria_[year].png"
+
+    Parameters
+    ----------
+    data1 : Data object
+        data for the colored plot
+    data2 : Data object
+        data for the hatched plot
+    anno : int
+        year of interest
+
+    Returns
+    -------
+    None.
+
+    '''
     map_border = [9, 17.5, 46, 49.5]
     values1, lat1, lon1 = data1.reduce_grid(data1.ann_mean(anno), *map_border)
     name1 = data1.get_name()
@@ -100,6 +151,24 @@ def plot_austria(data1, data2, anno):
 
 
 def plot_anomaly(data1, data2, anno):
+    '''
+    Creates a plot with the deviation of the data from a given year from the
+    temporal mean. The plot is saved at "fig/anomaly_[year].plt". 
+
+    Parameters
+    ----------
+    data1 : Data object
+        data for the colored plot
+    data2 : Data object
+        data for the hatched plot
+    anno : int
+        year of interest
+
+    Returns
+    -------
+    None.
+
+    '''
     lat1, lon1 = data1.get_coord()
     mean1 = data1.get_time_mean()
     name1 = data1.get_name()
