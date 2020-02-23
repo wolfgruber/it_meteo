@@ -12,6 +12,7 @@ Welcome to Abschlussproject's documentation!
    main
    data_class
    plot
+   results
 
 Indices and tables
 ==================

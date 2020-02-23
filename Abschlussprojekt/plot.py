@@ -98,6 +98,7 @@ def plot_time_series(data1, data2):
     ax2.set_ylabel(name2, color=color)
     ax2.tick_params(axis='y', labelcolor=color)
 
+    plt.tight_layout()
     plt.savefig('fig/time_series.png')
     plt.show()
     #return
@@ -257,17 +258,8 @@ def plot_season_violin(data):
     plt.figure(dpi=250)
     ax = srs.violinplot(data=mean)
     ax.set(xticklabels=season_key, ylabel=name)
+    plt.tight_layout()
     plt.savefig('fig/violin_'+str(data.sname)+'.png')
     plt.show()
 
-
-if __name__ == '__main__':
-    perc = Data('data/data.grib', 'tp')
-    temp = Data('data/data.grib', '2t')
-    #plot_mean_global(perc, temp)
-    #plot_time_series(perc, temp)
-    #plot_austria(perc, temp, 2019)
-    #plot_anomaly(perc, temp, 2019)
-    #plot_season_mean(perc, temp)
-    plot_season_violin(temp)
     

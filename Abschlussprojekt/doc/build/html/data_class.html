@@ -32,16 +32,26 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="data-class">
-<h1>data_class<a class="headerlink" href="#data-class" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-data_class"></span><p>The file classes.py containes the class Data, which loads and analyses
+  <div class="section" id="module-data_class">
+<span id="data-class"></span><h1>data_class<a class="headerlink" href="#module-data_class" title="Permalink to this headline">¶</a></h1>
+<p>The file classes.py containes the class Data, which loads and analyses
 the meteorological data from the file filename.grib.</p>
 <dl class="class">
 <dt id="data_class.Data">
 <em class="property">class </em><code class="sig-prename descclassname">data_class.</code><code class="sig-name descname">Data</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#data_class.Data" title="Permalink to this definition">¶</a></dt>
 <dd><p>The class Data loads data from the <a href="#id1"><span class="problematic" id="id2">*</span></a>.grib file and performs the desired
 manipulations on it. A Data object is the used by the functions from the
-plot module to produce plots</p>
+plot module to produce plots.</p>
+<dl>
+<dt>Parameters</dt><dd><dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>location and filename of the .grib file</p>
+</dd>
+<dt>code<span class="classifier">str</span></dt><dd><p>short name of the dataset to filter the convenient messages</p>
+</dd>
+</dl>
+<p>None.</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="data_class.Data.ann_mean">
 <code class="sig-name descname">ann_mean</code><span class="sig-paren">(</span><em class="sig-param">anno</em><span class="sig-paren">)</span><a class="headerlink" href="#data_class.Data.ann_mean" title="Permalink to this definition">¶</a></dt>
@@ -206,6 +216,7 @@ lon_max, lat_min, lat_max.</p>
 <li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">data_class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plot.html">plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">results</a></li>
 </ul>
 
 <div class="relations">
