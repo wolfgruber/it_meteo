@@ -234,7 +234,7 @@ class Data:
     def get_season_mean(self, season):
         len_dta = self.values.shape
         j = 0
-        data = np.zeros((len_dta[0]//4, len_dta[1], len_dta[2]))
+        data = np.zeros((len_dta[0]//4+1, len_dta[1], len_dta[2]))
         season_key = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
         for i in range(len_dta[0]):
             key = i % 12 == season_key[season][0]

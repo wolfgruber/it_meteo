@@ -94,7 +94,7 @@ def plot_time_series(data1, data2):
 
     color = 'tab:orange'
     ax2 = ax1.twinx()
-    ax2.errorbar(time2, values2, yerr=std2, color=color, alpha=0.8)
+    ax2.errorbar(time2, values2, yerr=std2, color=color, alpha=0.4)
     ax2.set_ylabel(name2, color=color)
     ax2.tick_params(axis='y', labelcolor=color)
 
