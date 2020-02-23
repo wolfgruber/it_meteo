@@ -117,7 +117,7 @@ class Data:
             each grid point
 
         '''
-        time_idx = (anno - 1979) * 12 - 1
+        time_idx = (anno - 1979) * 12
         data = np.mean(self.values[time_idx:time_idx+12,:,:], axis=0)
 
         return data
