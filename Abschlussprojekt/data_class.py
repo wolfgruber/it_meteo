@@ -2,14 +2,12 @@
 the meteorological data from the file filename.grib.'''
 
 import numpy as np
-import matplotlib.pyplot as plt
 import eccodes as ecc
-import cartopy as ctp
 
 
 class Data:
     '''The class Data loads data from the *.grib file and performs the desired 
-    manipulations on it. An Data object is the used by the functions from the
+    manipulations on it. A Data object is the used by the functions from the
     plot module to produce plots'''
 
 
@@ -29,6 +27,7 @@ class Data:
                         self.lat = msg.get('distinctLatitudes')
                         self.lon = msg.get('distinctLongitudes')
                         self.name = msg.get('name')+' / '+msg.get('units')
+                        self.sname = msg.get('shortName')
                         self.values = np.empty(
                                 (n, len(self.lat), len(self.lon)))
                         
@@ -106,7 +105,7 @@ class Data:
             2x2 array containing the temporal means for each grid point
 
         '''
-        if self.mean_time == 0:
+        if type(self.mean_time) == int:
             self.mean_time = self.comp_mean_time()
 
         return self.mean_time
@@ -200,4 +199,42 @@ class Data:
         lon = self.lon[idx_lon_min:idx_lon_max]
         
         return (data, lat, lon)
-        
+
+
+    def get_season_mean(self, season):
+        len_dta = self.values.shape
+        j = 0
+        data = np.zeros((len_dta[0]//4, len_dta[1], len_dta[2]))
+        season_key = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
+        for i in range(len_dta[0]):
+            key = i % 12 == season_key[season][0]
+            key = key or i % 12 == season_key[season][1]
+            key = key or i % 12 == season_key[season][2]
+                
+            if key:
+                data[j,:,:] = self.values[i,:,:]
+                j = j + 1
+                
+        data = np.mean(data, axis = 0)
+        return data
+    
+
+    def get_mean_per_season(self):
+        len_dta = self.values.shape
+        data = []
+        season_data = np.zeros((len_dta[0]//4, len_dta[1], len_dta[2]))
+        for season in range(4):
+            j = 0
+            
+            season_key = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
+            for i in range(len_dta[0]):
+                key = i % 12 == season_key[season][0]
+                key = key or i % 12 == season_key[season][1]
+                key = key or i % 12 == season_key[season][2]
+                
+                if key:
+                    season_data[j,:,:] = self.values[i,:,:]
+                    j = j + 1
+                
+            data.append(np.mean(season_data, axis=(1,2)))
+        return data

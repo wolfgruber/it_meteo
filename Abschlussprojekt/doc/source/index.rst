@@ -10,7 +10,7 @@ Welcome to Abschlussproject's documentation!
    :maxdepth: 2
 
    main
-   data
+   data_class
    plot
 
 Indices and tables

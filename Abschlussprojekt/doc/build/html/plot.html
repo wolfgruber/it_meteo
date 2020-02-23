@@ -14,6 +14,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="data" href="data.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,22 +33,28 @@
             
   <div class="section" id="module-plot">
 <span id="plot"></span><h1>plot<a class="headerlink" href="#module-plot" title="Permalink to this headline">¶</a></h1>
-<p>This file contains functions to plot the data loaded and analysed with the
-Data class.</p>
+<p>This module contains functions to plot the data loaded and analysed with
+the Data class.</p>
 <dl class="function">
 <dt id="plot.plot_anomaly">
 <code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_anomaly</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em>, <em class="sig-param">anno</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_anomaly" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a plot with the deviation of the data from a given year from the
 temporal mean. The plot is saved at “fig/anomaly_[year].plt”.</p>
-<dl class="simple">
-<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the colored plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data1</strong> (<em>Data object</em>) – data for the colored plot</p></li>
+<li><p><strong>data2</strong> (<em>Data object</em>) – data for the hatched plot</p></li>
+<li><p><strong>anno</strong> (<em>int</em>) – year of interest</p></li>
+</ul>
 </dd>
-<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the hatched plot</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
 </dd>
-<dt>anno<span class="classifier">int</span></dt><dd><p>year of interest</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
 </dd>
 </dl>
-<p>None.</p>
 </dd></dl>
 
 <dl class="function">
@@ -56,15 +63,21 @@ temporal mean. The plot is saved at “fig/anomaly_[year].plt”.</p>
 <dd><p>Creates a plot with the temporally averaged datasetd for a given year of
 two Data objects in Europe within the boundaries of map_border. The plot
 is saved at “fig/austria_[year].png”</p>
-<dl class="simple">
-<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the colored plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data1</strong> (<em>Data object</em>) – data for the colored plot</p></li>
+<li><p><strong>data2</strong> (<em>Data object</em>) – data for the hatched plot</p></li>
+<li><p><strong>anno</strong> (<em>int</em>) – year of interest</p></li>
+</ul>
 </dd>
-<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the hatched plot</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
 </dd>
-<dt>anno<span class="classifier">int</span></dt><dd><p>year of interest</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
 </dd>
 </dl>
-<p>None.</p>
 </dd></dl>
 
 <dl class="function">
@@ -72,13 +85,20 @@ is saved at “fig/austria_[year].png”</p>
 <code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_mean_global</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_mean_global" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a plot with thwe mean with respect to time of two datasets. The
 plot is saved in “fig/mean_lobal.png”.</p>
-<dl class="simple">
-<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the colorplot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data1</strong> (<em>Data object</em>) – data for the colorplot</p></li>
+<li><p><strong>data2</strong> (<em>Data object</em>) – data for the hatched plot</p></li>
+</ul>
 </dd>
-<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the hatched plot</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
 </dd>
 </dl>
-<p>None.</p>
 </dd></dl>
 
 <dl class="function">
@@ -86,13 +106,20 @@ plot is saved in “fig/mean_lobal.png”.</p>
 <code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_time_series</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_time_series" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a plot with the spatial means of two datasets. The plot is saved
 in “fig/time_series.png”</p>
-<dl class="simple">
-<dt>data1<span class="classifier">Data object</span></dt><dd><p>data for the first plot (blue)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data1</strong> (<em>Data object</em>) – data for the first plot (blue)</p></li>
+<li><p><strong>data2</strong> (<em>Data object</em>) – data for the second plot (orange)</p></li>
+</ul>
 </dd>
-<dt>data2<span class="classifier">Data object</span></dt><dd><p>data for the second plot (orange)</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
 </dd>
 </dl>
-<p>None.</p>
 </dd></dl>
 
 </div>
@@ -114,11 +141,17 @@ in “fig/time_series.png”</p>
 
 
 <h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">plot</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="data.html" title="previous chapter">data</a></li>
   </ul></li>
 </ul>
 </div>
