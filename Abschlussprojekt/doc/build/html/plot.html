@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>plot &#8212; Abschlussproject  documentation</title>
+    <title>plot &#8212; Abschluss-projekt  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -103,6 +103,45 @@ plot is saved in “fig/mean_lobal.png”.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="plot.plot_season_mean">
+<code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_season_mean</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_season_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a plot with seasonally averaged data on a global map. The plots
+are saved in “fig/season_[season].png”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data1</strong> (<em>Data object</em>) – data for the colored plot</p></li>
+<li><p><strong>data2</strong> (<em>Data object</em>) – data for the hatched plot</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="plot.plot_season_violin">
+<code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_season_violin</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_season_violin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates four violin plots where the distribution of the date is shown
+sorted by season.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Data object</em>) – data for the plot</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="plot.plot_time_series">
 <code class="sig-prename descclassname">plot.</code><code class="sig-name descname">plot_time_series</code><span class="sig-paren">(</span><em class="sig-param">data1</em>, <em class="sig-param">data2</em><span class="sig-paren">)</span><a class="headerlink" href="#plot.plot_time_series" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a plot with the spatial means of two datasets. The plot is saved
@@ -132,7 +171,7 @@ in “fig/time_series.png”</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Abschlussproject</a></h1>
+<h1 class="logo"><a href="index.html">Abschluss-projekt</a></h1>
 
 
 

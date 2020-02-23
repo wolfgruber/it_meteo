@@ -2,3 +2,6 @@
 ====
 main
 ====
+
+.. automodule:: main
+   :members:

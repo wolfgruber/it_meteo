@@ -57,7 +57,6 @@ def plot_mean_global(data1, data2):
     ax1.set_global()
     plt.savefig('fig/mean_global.png')
     plt.show()
-    #return
 
 
 def plot_time_series(data1, data2):
@@ -101,7 +100,6 @@ def plot_time_series(data1, data2):
     plt.tight_layout()
     plt.savefig('fig/time_series.png')
     plt.show()
-    #return
 
 
 def plot_austria(data1, data2, anno):
@@ -151,7 +149,6 @@ def plot_austria(data1, data2, anno):
     plt.title('Annual mean in the year '+str(anno)+' over Austria')
     plt.savefig('fig/austria_'+str(anno)+'.png')
     plt.show()
-    #return
 
 
 def plot_anomaly(data1, data2, anno):
@@ -210,10 +207,25 @@ def plot_anomaly(data1, data2, anno):
     ax1.set_global()
     plt.savefig('fig/anomaly_'+str(anno)+'.png')
     plt.show()
-    #return
 
 
 def plot_season_mean(data1, data2):
+    '''
+    Creates a plot with seasonally averaged data on a global map. The plots
+    are saved in "fig/season_[season].png"
+
+    Parameters
+    ----------
+    data1 : Data object
+        data for the colored plot
+    data2 : Data object
+        data for the hatched plot
+
+    Returns
+    -------
+    None.
+
+    '''
     season_key = ['winter', 'spring', 'summer', 'autumn']
     for i in range(4):
         lat1, lon1 = data1.get_coord()
@@ -251,6 +263,20 @@ def plot_season_mean(data1, data2):
     
 
 def plot_season_violin(data):
+    '''
+    Creates four violin plots where the distribution of the date is shown
+    sorted by season.
+
+    Parameters
+    ----------
+    data : Data object
+        data for the plot
+
+    Returns
+    -------
+    None.
+
+    '''
     season_key = ['winter', 'spring', 'summer', 'autumn']
     name = data.get_name()
     mean = data.get_mean_per_season()

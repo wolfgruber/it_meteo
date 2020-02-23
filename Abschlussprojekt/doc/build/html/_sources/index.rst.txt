@@ -3,8 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Abschlussproject's documentation!
+Welcome to Abschlussprojekt's documentation!
 ============================================
+
+This project is about The it-tasks most useful for scientists: Loading, processing and plotting of data. The used datasets are the *2 metre temperature* and the *total percipitation*, downloaded from https://cds.climate.copernicus.eu
 
 .. toctree::
    :maxdepth: 2

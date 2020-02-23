@@ -7,28 +7,28 @@ import eccodes as ecc
 
 class Data:
     '''
-    The class Data loads data from the *.grib file and performs the desired 
+    The class Data loads data from the .grib file and performs the desired 
     manipulations on it. A Data object is the used by the functions from the
     plot module to produce plots.
     
     Parameters
-        ----------
-        filename : str
-            location and filename of the .grib file
-        code : str
-            short name of the dataset to filter the convenient messages
+    ----------
+    filename : str
+        location and filename of the .grib file
+    code : str
+        short name of the dataset to filter the convenient messages
 
-        Returns
-        -------
-        None.
+    Returns
+    -------
+    None.
     '''
 
 
     def __init__(self, filename, code):
         '''
-        The class Data loads data from the *.grib file and performs the desired 
-    manipulations on it. A Data object is the used by the functions from the
-    plot module to produce plots.
+        The class Data loads data from the .grib file and performs the desired 
+        manipulations on it. A Data object is the used by the functions from the
+        plot module to produce plots.
 
         Parameters
         ----------
@@ -232,6 +232,21 @@ class Data:
 
 
     def get_season_mean(self, season):
+        '''
+        Computes and returns the temporally averaged data for a specified
+        season.
+
+        Parameters
+        ----------
+        season : int
+            key for the season: winter = 0, spring = 1, summer = 3, autumn = 4
+
+        Returns
+        -------
+        data : np.array(dtype=float)
+            2x2 array with the averaged data
+
+        '''
         len_dta = self.values.shape
         j = 0
         data = np.zeros((len_dta[0]//4+1, len_dta[1], len_dta[2]))
@@ -250,13 +265,22 @@ class Data:
 
 
     def get_mean_per_season(self):
+        '''
+        Computes the global mean for each month sorted by season.
+
+        Returns
+        -------
+        data : list of np.arrays
+            list of spatial means
+
+        '''
         len_dta = self.values.shape
         data = []
-        season_data = np.zeros((len_dta[0]//4, len_dta[1], len_dta[2]))
+        season_data = np.zeros((len_dta[0]//4+3, len_dta[1], len_dta[2]))
+        season_key = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
         for season in range(4):
             j = 0
 
-            season_key = [[0, 1, 11], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
             for i in range(len_dta[0]):
                 key = i % 12 == season_key[season][0]
                 key = key or i % 12 == season_key[season][1]

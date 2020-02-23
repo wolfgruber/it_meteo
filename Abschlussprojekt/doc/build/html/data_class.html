@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>data_class &#8212; Abschlussproject  documentation</title>
+    <title>data_class &#8212; Abschluss-projekt  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -39,17 +39,21 @@ the meteorological data from the file filename.grib.</p>
 <dl class="class">
 <dt id="data_class.Data">
 <em class="property">class </em><code class="sig-prename descclassname">data_class.</code><code class="sig-name descname">Data</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#data_class.Data" title="Permalink to this definition">¶</a></dt>
-<dd><p>The class Data loads data from the <a href="#id1"><span class="problematic" id="id2">*</span></a>.grib file and performs the desired
+<dd><p>The class Data loads data from the .grib file and performs the desired
 manipulations on it. A Data object is the used by the functions from the
 plot module to produce plots.</p>
-<dl>
-<dt>Parameters</dt><dd><dl class="simple">
-<dt>filename<span class="classifier">str</span></dt><dd><p>location and filename of the .grib file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – location and filename of the .grib file</p></li>
+<li><p><strong>code</strong> (<em>str</em>) – short name of the dataset to filter the convenient messages</p></li>
+</ul>
 </dd>
-<dt>code<span class="classifier">str</span></dt><dd><p>short name of the dataset to filter the convenient messages</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
 </dd>
-</dl>
-<p>None.</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None.</p>
 </dd>
 </dl>
 <dl class="method">
@@ -119,6 +123,20 @@ refer.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="data_class.Data.get_mean_per_season">
+<code class="sig-name descname">get_mean_per_season</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_class.Data.get_mean_per_season" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the global mean for each month sorted by season.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>data</strong> – list of spatial means</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list of np.arrays</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="data_class.Data.get_name">
 <code class="sig-name descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_class.Data.get_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the data with its unit.</p>
@@ -128,6 +146,24 @@ refer.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_class.Data.get_season_mean">
+<code class="sig-name descname">get_season_mean</code><span class="sig-paren">(</span><em class="sig-param">season</em><span class="sig-paren">)</span><a class="headerlink" href="#data_class.Data.get_season_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes and returns the temporally averaged data for a specified
+season.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>season</strong> (<em>int</em>) – key for the season: winter = 0, spring = 1, summer = 3, autumn = 4</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – 2x2 array with the averaged data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array(dtype=float)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -202,7 +238,7 @@ lon_max, lat_min, lat_max.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Abschlussproject</a></h1>
+<h1 class="logo"><a href="index.html">Abschluss-projekt</a></h1>
 
 
 
